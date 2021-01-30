@@ -1,0 +1,120 @@
+@use '../stylesheets/mixin' as mixin;
+
+.form {
+  max-width: 375px;
+  padding: 0 16px;
+  margin: 10px auto 0;
+
+  & > fieldset {
+    border: none;
+
+    & > legend {
+      margin: 0 auto;
+    }
+  }
+}
+
+.title {
+  font-size: mixin.rem(20);
+  font-weight: bold;
+
+  @include mixin.mq() {
+    font-size: mixin.rem(18);
+  }
+}
+
+.inputWrapper {
+  margin-top: 5px;
+}
+
+.label {
+  display: block;
+  font-size: mixin.rem(18);
+
+  @include mixin.mq() {
+    font-size: mixin.rem(16);
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 5px 8px;
+  margin-top: 5px;
+  font-size: mixin.rem(16);
+  border: 1px solid mixin.$mainTextColor;
+  border-radius: 3px;
+}
+
+.error {
+  height: 1.5em;
+  font-size: mixin.rem(16);
+  color: mixin.$errorColor;
+}
+
+.actionWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45px;
+  margin-top: 10px;
+
+  @include mixin.mq() {
+    margin-top: 5px;
+  }
+}
+
+.action {
+  padding: 5px 15px;
+  font-size: mixin.rem(18);
+  color: mixin.$bgColor;
+  background-color: mixin.$primaryColor;
+  border: 3px solid mixin.$primaryColor;
+  border-radius: 3px;
+  box-shadow: 0 3px 5px 0 mixin.$mainTextColor;
+
+  @include mixin.mq() {
+    padding: 5px 10px;
+    font-size: mixin.rem(16);
+  }
+
+  &:hover,
+  &:focus {
+    color: mixin.$primaryColor;
+    background-color: mixin.$bgColor;
+    border: 3px solid mixin.$primaryColor;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+}
+
+.provider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.google {
+  display: flex;
+  align-items: center;
+  max-width: 220px;
+  min-height: 40px;
+  padding: 8px 16px;
+  font-size: mixin.rem(14);
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.googleImg {
+  width: 18px;
+  height: 18px;
+  margin-right: 16px;
+}
+
+.googleText {
+  color: #757575;
+}

@@ -1,0 +1,12 @@
+@use '../stylesheets/mixin' as mixin;
+
+.root {
+  padding: 0 16px;
+  margin-top: 20px;
+  text-align: center;
+
+  & > a {
+    color: mixin.$primaryColor;
+    text-decoration: underline;
+  }
+}
