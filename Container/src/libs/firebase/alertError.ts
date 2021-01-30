@@ -1,5 +1,5 @@
 export const alertError = (
-  error: any,
+  error: firebase.default.auth.Error,
 ): {
   title: string;
   description: string;
