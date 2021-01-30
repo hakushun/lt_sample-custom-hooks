@@ -1,0 +1,59 @@
+@use '../stylesheets/mixin' as mixin;
+
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: mixin.$z_dialog;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(90vw, 500px);
+  height: min(90vh, 300px);
+  padding: 25px 20px;
+  overflow-y: auto;
+  background: #fffafa;
+  border: 2px solid mixin.$mainTextColor;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-size: mixin.rem(20);
+  font-weight: bold;
+}
+
+.description {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  margin-top: 10px;
+  font-size: mixin.rem(18);
+  white-space: pre-wrap;
+}
+
+.buttonWrapper {
+  margin-top: 15px;
+}
+
+.button {
+  padding: 3px 10px;
+  font-size: mixin.rem(16);
+  color: mixin.$bgColor;
+  background-color: mixin.$primaryLightColor;
+  border: 3px solid mixin.$primaryLightColor;
+  border-radius: 3px;
+  box-shadow: 0 3px 5px 0 mixin.$mainTextColor;
+
+  &:hover,
+  &:focus {
+    color: mixin.$primaryLightColor;
+    background-color: mixin.$bgColor;
+    border: 3px solid mixin.$primaryLightColor;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+}

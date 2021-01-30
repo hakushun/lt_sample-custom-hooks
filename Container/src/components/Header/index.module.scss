@@ -1,0 +1,76 @@
+@use '../stylesheets/mixin' as mixin;
+
+.header {
+  width: 100vw;
+  background-color: mixin.$headerBgColor;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: mixin.rem(28);
+  font-weight: bold;
+
+  @include mixin.mq() {
+    font-size: mixin.rem(22);
+  }
+}
+
+.titleLink {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: darken(mixin.$headerBgColor, 10%);
+  }
+
+  &:active {
+    background-color: mixin.$headerBgColor;
+    box-shadow: inset 0 0 5px 5px darken(mixin.$headerBgColor, 10%);
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+}
+
+.navItem {
+  &:not(:first-child) {
+    margin-left: 15px;
+
+    @include mixin.mq() {
+      margin-left: 0;
+    }
+  }
+}
+
+.navLink {
+  display: block;
+  padding: 10px 20px;
+  font-size: mixin.rem(18);
+  font-weight: bold;
+  border-radius: 3px;
+
+  @include mixin.mq() {
+    padding: 10px;
+    font-size: mixin.rem(14);
+  }
+
+  &:hover {
+    background-color: darken(mixin.$headerBgColor, 10%);
+  }
+
+  &:active {
+    background-color: mixin.$headerBgColor;
+    box-shadow: inset 0 0 5px 5px darken(mixin.$headerBgColor, 10%);
+  }
+}
