@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectDialog, selectDialogMessage, toggle } from '../redux/modules/dialog';
 
-type UseDialog = () => {
+type UseDialogType = () => {
   isOpend: boolean;
   message: {
     title: string;
@@ -9,7 +9,7 @@ type UseDialog = () => {
   };
   closeDialog: () => void;
 };
-export const useDialog: UseDialog = () => {
+export const useDialog: UseDialogType = () => {
   const dispatch = useDispatch();
   const isOpend = useSelector(selectDialog);
   const message = useSelector(selectDialogMessage);
