@@ -1,5 +1,12 @@
 # Custom Hooks vs Container Component Sample Code
 
+## ディレクトリ構成
+### Container配下
+- Container Componentを使用したコード
+
+### CustomHooks配下
+- Custom Hooksを使用したコード
+---
 ## Custom Hooksとは
 ### Hooksとは
 - [https://reactjs.org/docs/hooks-intro.html](https://reactjs.org/docs/hooks-intro.html)
