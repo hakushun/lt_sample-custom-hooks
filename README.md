@@ -7,6 +7,10 @@
 ### CustomHooks配下
 - Custom Hooksを使用したコード
 ---
+## Container Componentとは
+- [https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [https://medium.com/@learnreact/container-components-c0e67432e005](https://medium.com/@learnreact/container-components-c0e67432e005)
+
 ## Custom Hooksとは
 ### Hooksとは
 - [https://reactjs.org/docs/hooks-intro.html](https://reactjs.org/docs/hooks-intro.html)
@@ -14,10 +18,6 @@
 
 ### Custom Hooksとは
 - [https://ja.reactjs.org/docs/hooks-custom.html](https://ja.reactjs.org/docs/hooks-custom.html)
-
-## Container Componentとは
-- [https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
-- [https://medium.com/@learnreact/container-components-c0e67432e005](https://medium.com/@learnreact/container-components-c0e67432e005)
 
 ## Example 1: 認証系ロジックの書き換え
 ### Use Container Component
