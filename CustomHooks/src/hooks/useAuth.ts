@@ -64,8 +64,8 @@ export const useAuth: UseAuthType = () => {
       });
 
   useEffect(() => {
-    const cancelAuthListener = firebase.auth().onIdTokenChanged(async (usr) => {
-      if (usr) {
+    const cancelAuthListener = firebase.auth().onIdTokenChanged(async (user) => {
+      if (user) {
         dispatch(authUser(true));
       } else {
         dispatch(authUser(false));

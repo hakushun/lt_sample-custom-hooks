@@ -11,8 +11,8 @@ export const withAuth = (Component: React.FC): React.FC => (props: any) => {
   const isAuth = useSelector(selectIsAuth);
 
   useEffect(() => {
-    const cancelAuthListener = firebase.auth().onIdTokenChanged(async (usr) => {
-      if (usr) {
+    const cancelAuthListener = firebase.auth().onIdTokenChanged(async (user) => {
+      if (user) {
         dispatch(authUser(true));
       } else {
         dispatch(authUser(false));
