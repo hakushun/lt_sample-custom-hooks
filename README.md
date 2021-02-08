@@ -100,17 +100,15 @@ export const Header: React.VFC = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
 
-  const logout = async () =>
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        dispatch(authUser(false));
-        router.push('/');
-      })
-      .catch((error) => {
-        dispatch(emitError(alertError(error)));
-      });
+  const logout = async () => {
+	try {
+      await firebase.auth().signOut()
+      dispatch(authUser(false));
+      router.push('/');
+    } catch (error) {
+      dispatch(emitError(alertError(error)));
+    }
+  }
 
   return <Presentational isAuth={isAuth} logout={logout} />;
 };
@@ -162,17 +160,15 @@ export const useAuth: UseAuthType = () => {
   };
 
   // Container/src/components/Header/index.tsxから移植
-  const logout = async () =>
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        dispatch(authUser(false));
-        router.push('/');
-      })
-      .catch((error) => {
-        dispatch(emitError(alertError(error)));
-      });
+  const logout = async () => {
+	try {
+      await firebase.auth().signOut()
+      dispatch(authUser(false));
+      router.push('/');
+    } catch (error) {
+      dispatch(emitError(alertError(error)));
+    }
+  }
 
   return { isAuth, signup, signin, signinWithGoogle, logout };
 };
