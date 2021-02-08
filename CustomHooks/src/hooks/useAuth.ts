@@ -51,17 +51,15 @@ export const useAuth: UseAuthType = () => {
     }
   };
 
-  const logout = async () =>
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        dispatch(authUser(false));
-        router.push('/');
-      })
-      .catch((error) => {
-        dispatch(emitError(alertError(error)));
-      });
+  const logout = async () => {
+    try {
+      await firebase.auth().signOut()
+      dispatch(authUser(false));
+      router.push('/');
+    } catch (error) {
+      dispatch(emitError(alertError(error)));
+    }
+  }
 
   useEffect(() => {
     const cancelAuthListener = firebase.auth().onIdTokenChanged(async (user) => {

@@ -12,17 +12,15 @@ export const Header: React.VFC = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
 
-  const logout = async () =>
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        dispatch(authUser(false));
-        router.push('/');
-      })
-      .catch((error) => {
-        dispatch(emitError(alertError(error)));
-      });
+  const logout = async () => {
+    try {
+      await firebase.auth().signOut()
+      dispatch(authUser(false));
+      router.push('/');
+    } catch (error) {
+      dispatch(emitError(alertError(error)));
+    }
+  }
 
   return <Presentational isAuth={isAuth} logout={logout} />;
 };
